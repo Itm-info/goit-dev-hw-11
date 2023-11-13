@@ -29,6 +29,9 @@ public class CliFSM {
             String command = scanner.nextLine();
 
             switch (command) {
+                case "hi":
+                    System.out.println("Hi!");
+                    break;
                 case "exit":
                     System.exit(0);
                     break;
@@ -59,6 +62,18 @@ public class CliFSM {
                 case "dp":
                     deletePlanetCrudService();
                     break;
+                case "ct":
+                    createTicketCrudService();
+                    break;
+                case "rt":
+                    readTicketCrudService();
+                    break;
+                case "ut":
+                    updateTicketCrudService();
+                    break;
+                case "dt":
+                    deleteTicketCrudService();
+                    break;
                 default:
                     unknownCommand(command);
             }
@@ -76,6 +91,10 @@ public class CliFSM {
     public void readPlanetCrudService() { state.readPlanetCrudService(); }
     public void updatePlanetCrudService() { state.updatePlanetCrudService(); }
     public void deletePlanetCrudService() { state.deletePlanetCrudService(); }
+    public void createTicketCrudService() { state.createTicketCrudService(); }
+    public void readTicketCrudService() { state.readTicketCrudService(); }
+    public void updateTicketCrudService() { state.updateTicketCrudService(); }
+    public void deleteTicketCrudService() { state.deleteTicketCrudService(); }
     public void unknownCommand(String cmd) {
         state.unknownCommand(cmd);
     }

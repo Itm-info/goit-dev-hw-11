@@ -6,8 +6,8 @@ import client.IClientCrudService;
 
 import java.sql.SQLException;
 
-public class deleteClientCrud extends CliState {
-    public deleteClientCrud(CliFSM fsm) {
+public class DeleteClientCrud extends CliState {
+    public DeleteClientCrud(CliFSM fsm) {
         super(fsm);
     }
 

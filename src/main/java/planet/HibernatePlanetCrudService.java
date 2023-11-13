@@ -45,7 +45,7 @@ public class HibernatePlanetCrudService implements IPlanetCrudService {
                         "delete from Planet where id= :id"
                 );
                 query.setParameter("id", id);
-                System.out.println(query.executeUpdate());
+                System.out.println("Deleted " + query.executeUpdate());
             transaction.commit();
         }
     }

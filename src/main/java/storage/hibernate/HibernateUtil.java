@@ -6,6 +6,7 @@ import org.hibernate.cfg.Configuration;
 import client.Client;
 import planet.Planet;
 import storage.DatabaseInitService;
+import ticket.Ticket;
 
 public class HibernateUtil {
     private static final HibernateUtil INSTANCE;
@@ -21,6 +22,7 @@ public class HibernateUtil {
         sessionFactory = new Configuration()
                 .addAnnotatedClass(Client.class)
                 .addAnnotatedClass(Planet.class)
+                .addAnnotatedClass(Ticket.class)
                 .buildSessionFactory();
     }
 

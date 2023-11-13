@@ -7,8 +7,8 @@ import planet.IPlanetCrudService;
 import java.sql.SQLException;
 import java.util.UUID;
 
-public class createPlanetCrud extends CliState {
-    public createPlanetCrud(CliFSM fsm) {
+public class CreatePlanetCrud extends CliState {
+    public CreatePlanetCrud(CliFSM fsm) {
         super(fsm);
     }
 

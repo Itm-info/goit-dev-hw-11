@@ -6,8 +6,8 @@ import planet.IPlanetCrudService;
 
 import java.sql.SQLException;
 
-public class readPlanetCrud extends CliState {
-    public readPlanetCrud(CliFSM fsm) {
+public class ReadPlanetCrud extends CliState {
+    public ReadPlanetCrud(CliFSM fsm) {
         super(fsm);
     }
 

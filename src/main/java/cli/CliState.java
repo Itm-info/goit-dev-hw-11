@@ -16,5 +16,9 @@ public class CliState {
     public void readPlanetCrudService() { }
     public void updatePlanetCrudService() { }
     public void deletePlanetCrudService() { }
+    public void createTicketCrudService() { }
+    public void readTicketCrudService() { }
+    public void updateTicketCrudService() { }
+    public void deleteTicketCrudService() { }
     public void unknownCommand(String cmd) {  }
 }

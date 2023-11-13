@@ -6,8 +6,8 @@ import client.IClientCrudService;
 
 import java.sql.SQLException;
 
-public class deleteClientCrud extends CliState {
-    public deleteClientCrud(CliFSM fsm) {
+public class ReadClientCrud extends CliState {
+    public ReadClientCrud(CliFSM fsm) {
         super(fsm);
     }
 
@@ -16,21 +16,19 @@ public class deleteClientCrud extends CliState {
         try {
             IClientCrudService ClientCrudService = new HibernateClientCrudService();
 
-            System.out.println("Deleting. Enter client Id:");
+            System.out.println("Reading. Enter client Id:");
             String sid = fsm.getScanner().nextLine();
             long id = Long.parseLong(sid);
 
             Client client = ClientCrudService.getById(id);
 
             if (client != null) {
-                System.out.println("Client " + client.getName() + " found. Processing...");
-                ClientCrudService.delete(id);
+                System.out.println("Client " + client.getName() + " found.");
             } else {
                 System.out.println("Client with id " + id + " not found:");
             }
 
             fsm.setState(new IdleState(fsm));
-//        } catch (SQLException | ExecutionException | InterruptedException e) {
         } catch (SQLException e) {
             e.printStackTrace();
         }

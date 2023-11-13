@@ -3,13 +3,11 @@ package cli;
 import client.HibernateClientCrudService;
 import client.IClientCrudService;
 import client.Client;
-import jakarta.persistence.Id;
 
 import java.sql.SQLException;
-import java.util.concurrent.ExecutionException;
 
-public class createClientCrud extends CliState {
-    public createClientCrud(CliFSM fsm) {
+public class CreateClientCrud extends CliState {
+    public CreateClientCrud(CliFSM fsm) {
         super(fsm);
     }
 
@@ -29,7 +27,6 @@ public class createClientCrud extends CliState {
             System.out.println("Client " + client.getName() +  " saved.");
 
             fsm.setState(new IdleState(fsm));
-//        } catch (SQLException | ExecutionException | InterruptedException e) {
         } catch (SQLException e) {
             e.printStackTrace();
         }

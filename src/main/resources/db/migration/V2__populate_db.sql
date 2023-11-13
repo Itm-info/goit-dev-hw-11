@@ -12,12 +12,16 @@ INSERT INTO client (name) VALUES
 ;
 
 INSERT INTO planet VALUES
-    ('MERC', 'Mercury'),
-    ('VEN','Venus'),
-    ('EAR','Earth'),
-    ('MAR','Mars'),
-    ('JUP','Jupiter')
+    ('MERC','Mercury'),
+    ('VENU','Venus'),
+    ('EART','Earth'),
+    ('MARS','Mars'),
+    ('JUPI','Jupiter'),
+    ('SATU','Saturn'),
+    ('URAN','Uranus'),
+    ('NEPT','Neptune'),
+    ('PLUT','Pluto')
 ;
 
-INSERT INTO ticket (client_id, from_planet_id, to_planet_id)
+INSERT INTO ticket (client_id, planet_from_id, planet_to_id)
     SELECT client.id, planet.id, planet.id FROM client, planet LIMIT 10;

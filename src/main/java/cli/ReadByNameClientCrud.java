@@ -6,8 +6,8 @@ import client.IClientCrudService;
 
 import java.sql.SQLException;
 
-public class readByNameClientCrud extends CliState {
-    public readByNameClientCrud(CliFSM fsm) {
+public class ReadByNameClientCrud extends CliState {
+    public ReadByNameClientCrud(CliFSM fsm) {
         super(fsm);
     }
 

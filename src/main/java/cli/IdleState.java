@@ -10,27 +10,33 @@ public class IdleState extends CliState {
         System.out.println("Unknown command: " + cmd);
     }
     @Override
-    public void createClientCrudService() {
-        fsm.setState(new createClientCrud(fsm));
-    }
+    public void createClientCrudService() { fsm.setState(new CreateClientCrud(fsm)); }
     @Override
     public void readClientCrudService() {
-        fsm.setState(new readClientCrud(fsm));
+        fsm.setState(new ReadClientCrud(fsm));
     }
     @Override
     public void readByNameClientCrudService() {
-        fsm.setState(new readByNameClientCrud(fsm));
+        fsm.setState(new ReadByNameClientCrud(fsm));
     }
     @Override
-    public void updateClientCrudService() { fsm.setState(new updateClientCrud(fsm)); }
+    public void updateClientCrudService() { fsm.setState(new UpdateClientCrud(fsm)); }
     @Override
-    public void deleteClientCrudService() { fsm.setState(new deleteClientCrud(fsm));  }
+    public void deleteClientCrudService() { fsm.setState(new DeleteClientCrud(fsm));  }
     @Override
-    public void createPlanetCrudService() { fsm.setState(new createPlanetCrud(fsm)); }
+    public void createPlanetCrudService() { fsm.setState(new CreatePlanetCrud(fsm)); }
     @Override
-    public void readPlanetCrudService() { fsm.setState(new readPlanetCrud(fsm)); }
+    public void readPlanetCrudService() { fsm.setState(new ReadPlanetCrud(fsm)); }
     @Override
-    public void updatePlanetCrudService() { fsm.setState(new updatePlanetCrud(fsm)); }
+    public void updatePlanetCrudService() { fsm.setState(new UpdatePlanetCrud(fsm)); }
     @Override
-    public void deletePlanetCrudService() { fsm.setState(new deletePlanetCrud(fsm)); }
+    public void deletePlanetCrudService() { fsm.setState(new DeletePlanetCrud(fsm)); }
+    @Override
+    public void createTicketCrudService() { fsm.setState(new CreateTicketCrud(fsm)); }
+    @Override
+    public void readTicketCrudService() { fsm.setState(new ReadTicketCrud(fsm)); }
+    @Override
+    public void updateTicketCrudService() { fsm.setState(new UpdateTicketCrud(fsm)); }
+    @Override
+    public void deleteTicketCrudService() { fsm.setState(new DeleteTicketCrud(fsm)); }
 }

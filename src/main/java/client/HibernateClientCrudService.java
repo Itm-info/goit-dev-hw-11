@@ -28,7 +28,7 @@ public class HibernateClientCrudService implements IClientCrudService {
         }
     }
     @Override
-    public Client getByName(String name) throws SQLException {
+    public Client getByName(String name) {
         try (Session session = HibernateUtil.getInstance().getSessionFactory().openSession()) {
             Query<Client> query = session.createQuery(
                     "from Client where name = :name",
@@ -56,7 +56,7 @@ public class HibernateClientCrudService implements IClientCrudService {
                         "delete from Client where id= :id"
                 );
                 query.setParameter("id", id);
-                System.out.println(query.executeUpdate());
+                System.out.println("Deleted " + query.executeUpdate());
             transaction.commit();
             session.close();
         }

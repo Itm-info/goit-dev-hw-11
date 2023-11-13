@@ -15,9 +15,9 @@ CREATE TABLE ticket (
     id IDENTITY PRIMARY KEY,
     created_at TIMESTAMP default CURRENT_TIMESTAMP,
     client_id BIGINT,
-    from_planet_id VARCHAR(10),
-    to_planet_id VARCHAR(10),
+    planet_from_id VARCHAR(10),
+    planet_to_id VARCHAR(10),
     FOREIGN KEY (client_id) REFERENCES client(id),
-    FOREIGN KEY (from_planet_id) REFERENCES planet(id),
-    FOREIGN KEY (to_planet_id) REFERENCES planet(id)
+    FOREIGN KEY (planet_from_id) REFERENCES planet(id),
+    FOREIGN KEY (planet_to_id) REFERENCES planet(id)
 );

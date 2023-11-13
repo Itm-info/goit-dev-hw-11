@@ -6,8 +6,8 @@ import planet.IPlanetCrudService;
 
 import java.sql.SQLException;
 
-public class updatePlanetCrud extends CliState {
-    public updatePlanetCrud(CliFSM fsm) {
+public class DeletePlanetCrud extends CliState {
+    public DeletePlanetCrud(CliFSM fsm) {
         super(fsm);
     }
 
@@ -16,15 +16,14 @@ public class updatePlanetCrud extends CliState {
         try {
             IPlanetCrudService PlanetCrudService = new HibernatePlanetCrudService();
 
-            System.out.println("Updating. Enter planet Id:");
+            System.out.println("Deleting. Enter planet Id:");
             String id = fsm.getScanner().nextLine();
-            
+
             Planet planet = PlanetCrudService.getById(id);
 
             if (planet != null) {
-                System.out.println("Planet " + planet.getName() + " found. Processing...");
-                PlanetCrudService.update(id);
-                System.out.println("Planet new name is " + PlanetCrudService.getById(id).getName() + ".");
+                System.out.println("Planet " + planet.getName() + " found. Erasing from database...");
+                PlanetCrudService.delete(id);
             } else {
                 System.out.println("Planet with id " + id + " not found:");
             }
